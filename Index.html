@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DK Realty - Nigeria's trusted real estate partner for buying, selling, and investing in properties across Lagos, Abuja, Port Harcourt and other major cities">
+    <meta name="keywords" content="Nigeria real estate, Lagos properties, Abuja homes, Port Harcourt land, property investment Nigeria">
+    <title>DK Realty | Premium Nigerian Real Estate Services | Buy/Sell Properties</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.dkrealty.com" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts with preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-green: #1B5E20;
+            --secondary-green: #2E7D32;
+            --dark-green: #0D3B13;
+            --gold: #D4AF37;
+            --light-gold: #F0D683;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .bg-primary-green {
+            background-color: var(--primary-green) !important;
+        }
+        
+        .bg-secondary-green {
+            background-color: var(--secondary-green) !important;
+        }
+        
+        .bg-dark-green {
+            background-color: var(--dark-green) !important;
+        }
+        
+        .bg-gold {
+            background-color: var(--gold) !important;
+        }
+        
+        .text-gold {
+            color: var(--gold) !important;
+        }
+        
+        .text-primary-green {
+            color: var(--primary-green) !important;
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--dark-green);
+            border-color: var(--gold);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: var(--light-gold);
+            color: var(--dark-green);
+            border-color: var(--light-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline-gold {
+            border-color: var(--gold);
+            color: var(--gold);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-gold:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(5px);
+        }
+        
+        .navbar-brand .logo-text h1 {
+            color: var(--primary-green);
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .navbar-brand .logo-text span {
+            color: var(--gold);
+            font-size: 0.8rem;
+            display: block;
+            line-height: 1.2;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.85)), url('image/property2.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 180px 0 100px;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--light-gray));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .property-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .property-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold);
+            color: var(--dark-green);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .property-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .property-card:hover .property-image img {
+            transform: scale(1.1);
+        }
+        
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .testimonial-card {
+            position: relative;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+            color: white;
+            animation: none;
+        }
+        
+        .footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gold), var(--primary-green));
+        }
+        
+        .footer h3 {
+            color: var(--gold);
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--gold);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--gold);
+            color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+        
+        .contact-icon {
+            color: var(--gold);
+            margin-right: 10px;
+            min-width: 20px;
+        }
+        
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-green);
+            transform: translateY(-3px);
+        }
+        
+        /* Improved form controls */
+        .form-control, .form-select {
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+        }
+        
+        /* Property features icons */
+        .property-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .property-feature i {
+            color: var(--gold);
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Newsletter form */
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+        }
+        
+        .newsletter-form .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+        }
+        
+        .newsletter-form .btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .hero {
+                padding: 150px 0 80px;
+                background-attachment: scroll;
+            }
+            
+            .navbar-brand .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .navbar-brand .logo-text span {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero {
+                padding: 120px 0 60px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form .form-control {
+                border-radius: 6px;
+                border-right: 1px solid #ddd;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form .btn {
+                border-radius: 6px;
+            }
+        }
+        
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Focus styles for accessibility */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+        }
+    </style>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "DK Realty",
+      "image": "https://www.dkrealty.com/images/logo.png",
+      "@id": "https://www.dkrealty.com",
+      "url": "https://www.dkrealty.com",
+      "telephone": "+2348123456789",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12A Admiralty Way",
+        "addressLocality": "Lekki Phase 1",
+        "addressRegion": "Lagos",
+        "postalCode": "",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.4311,
+        "longitude": 3.4515
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/2348123456789" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="DK Realty Home">
+                <!-- <img src="images/logo.png" alt="DK Realty Logo" height="50" loading="lazy"> -->
+                <div class="logo-text ms-2">
+                    <h1>DK Realty</h1>
+                    <span>Nigeria's Trusted Real Estate Partner</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Properties
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">All Properties</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="properties.html?type=residential">Residential</a></li>
+                            <li><a class="dropdown-item" href="properties.html?type=commercial">Commercial</a></li>
+                            <li><a class="dropdown-item" href="properties.html?type=land">Land</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="properties.html?transaction=sale">For Sale</a></li>
+                            <li><a class="dropdown-item" href="properties.html?transaction=rent">For Rent</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a href="list-property.html" class="btn btn-gold">List Your Property</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <h1 class="display-4 fw-bold mb-4">Find Your Dream Property in Nigeria</h1>
+                    <p class="lead mb-5">DK Realty connects you to premium residential and commercial properties across Nigeria's most desirable locations with trusted expertise and personalized service.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="properties.html" class="btn btn-gold btn-lg">Browse Properties</a>
+                        <a href="#featured-properties" class="btn btn-outline-light btn-lg">View Featured</a>
+                    </div>
+                    
+                    <div class="mt-5 d-flex flex-wrap gap-4">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-white rounded-circle p-3 me-3">
+                                <i class="fas fa-home text-primary-green fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">1,200+</h4>
+                                <small class="text-white-50">Properties Listed</small>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-center">
+                            <div class="bg-white rounded-circle p-3 me-3">
+                                <i class="fas fa-users text-primary-green fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">850+</h4>
+                                <small class="text-white-50">Happy Clients</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card bg-white text-dark shadow-lg">
+                        <div class="card-body p-4">
+                            <h3 class="text-primary-green mb-4">Search Properties</h3>
+                            <form action="properties.html" method="get" id="propertySearchForm">
+                                <div class="mb-3">
+                                    <label for="property-type" class="form-label">Property Type</label>
+                                    <select class="form-select" id="property-type" name="type" aria-label="Select property type">
+                                        <option value="">Any Type</option>
+                                        <option value="residential">Residential</option>
+                                        <option value="commercial">Commercial</option>
+                                        <option value="land">Land</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="transaction-type" class="form-label">Transaction Type</label>
+                                    <select class="form-select" id="transaction-type" name="transaction" aria-label="Select transaction type">
+                                        <option value="">Any Transaction</option>
+                                        <option value="sale">For Sale</option>
+                                        <option value="rent">For Rent</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="location" class="form-label">Location</label>
+                                    <select class="form-select" id="location" name="location" aria-label="Select location">
+                                        <option value="">Any Location</option>
+                                        <option value="lagos">Lagos</option>
+                                        <option value="abuja">Abuja</option>
+                                        <option value="port-harcourt">Port Harcourt</option>
+                                        <option value="enugu">Enugu</option>
+                                        <option value="kano">Kano</option>
+                                    </select>
+                                </div>
+                                
+                                <button type="submit" class="btn bg-primary-green text-white w-100 py-3 fw-bold">Search Properties</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Properties -->
+    <section class="py-5 bg-light" id="featured-properties">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Featured Properties</h2>
+                <p class="lead">Explore our handpicked selection of premium properties across Nigeria</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Property 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-card card h-100">
+                        <div class="property-image">
+                            <span class="property-badge">For Sale</span>
+                            <img src="image/property 1.webp" class="card-img-top" alt="Luxury Apartment in Banana Island Lagos" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <div class="text-gold fw-bold fs-4 mb-2">₦85,000,000</div>
+                            <h5 class="card-title text-primary-green">Luxury Apartment in Banana Island</h5>
+                            <p class="card-text text-muted mb-3">
+                                <i class="fas fa-map-marker-alt text-gold me-2"></i> Banana Island, Lagos
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 mb-4">
+                                <div class="property-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4 Beds</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>5 Baths</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>350 sqm</span>
+                                </div>
+                            </div>
+                            <a href="property-details.html" class="btn btn-gold w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="property-card card h-100">
+                        <div class="property-image">
+                            <span class="property-badge">For Rent</span>
+                            <img src="image/property2.webp" class="card-img-top" alt="Commercial Space in Maitama Abuja" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <div class="text-gold fw-bold fs-4 mb-2">₦12,000,000/yr</div>
+                            <h5 class="card-title text-primary-green">Commercial Space in Maitama</h5>
+                            <p class="card-text text-muted mb-3">
+                                <i class="fas fa-map-marker-alt text-gold me-2"></i> Maitama, Abuja
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 mb-4">
+                                <div class="property-feature">
+                                    <i class="fas fa-building"></i>
+                                    <span>Office Space</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>800 sqm</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-car"></i>
+                                    <span>20 Parking</span>
+                                </div>
+                            </div>
+                            <a href="property-details.html" class="btn btn-gold w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="property-card card h-100">
+                        <div class="property-image">
+                            <span class="property-badge">For Sale</span>
+                            <img src="image/property3.webp" class="card-img-top" alt="Residential Land in GRA Port Harcourt" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <div class="text-gold fw-bold fs-4 mb-2">₦25,000,000</div>
+                            <h5 class="card-title text-primary-green">Residential Land in GRA</h5>
+                            <p class="card-text text-muted mb-3">
+                                <i class="fas fa-map-marker-alt text-gold me-2"></i> GRA, Port Harcourt
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 mb-4">
+                                <div class="property-feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>500 sqm</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-road"></i>
+                                    <span>Paved Road</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-tint"></i>
+                                    <span>Water Access</span>
+                                </div>
+                            </div>
+                            <a href="property-details.html" class="btn btn-gold w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="properties.html" class="btn btn-gold btn-lg px-5">View All Properties</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Services</h2>
+                <p class="lead">Comprehensive real estate solutions tailored to your needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary-green rounded-circle p-3 d-inline-flex mb-4">
+                                <i class="fas fa-home text-white fs-3"></i>
+                            </div>
+                            <h4 class="text-primary-green mb-3">Property Sales</h4>
+                            <p>We connect buyers with their dream properties through our extensive network of premium listings across Nigeria's most desirable locations.</p>
+                            <a href="services.html#sales" class="btn btn-link text-gold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary-green rounded-circle p-3 d-inline-flex mb-4">
+                                <i class="fas fa-key text-white fs-3"></i>
+                            </div>
+                            <h4 class="text-primary-green mb-3">Property Rental</h4>
+                            <p>Find your perfect rental property with our curated selection of apartments, houses, and commercial spaces in prime locations.</p>
+                            <a href="services.html#rental" class="btn btn-link text-gold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary-green rounded-circle p-3 d-inline-flex mb-4">
+                                <i class="fas fa-chart-line text-white fs-3"></i>
+                            </div>
+                            <h4 class="text-primary-green mb-3">Investment Advisory</h4>
+                            <p>Our experts provide strategic advice to help you make informed real estate investment decisions with maximum returns.</p>
+                            <a href="services.html#investment" class="btn btn-link text-gold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="position-relative">
+                        <img src="image/property 1.webp" alt="DK Realty Team" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="position-absolute bottom-0 start-0 bg-primary-green text-white p-3 m-3 rounded shadow">
+                            <h4 class="mb-0">13+ Years</h4>
+                            <small>Of Trusted Service</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title text-start">About DK Realty</h2>
+                    <p class="lead">Your trusted partner in Nigerian real estate</p>
+                    <p>Founded in 2010, DK Realty has grown to become one of Nigeria's most trusted real estate agencies. With offices in Lagos, Abuja, and Port Harcourt, we specialize in connecting clients with premium properties that meet their unique needs.</p>
+                    <p>Our team of experienced professionals is dedicated to providing exceptional service, market expertise, and transparent transactions. We pride ourselves on our integrity, attention to detail, and commitment to our clients' satisfaction.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Verified Properties</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Legal Documentation</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Market Analysis</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> 24/7 Support</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Negotiation Experts</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> After-Sale Service</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="btn btn-gold mt-4">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="lead">Trusted by hundreds of satisfied clients across Nigeria</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card card h-100">
+                        <div class="card-body p-4 testimonial-content">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="image/user1.webp" alt="Client testimonial" class="rounded-circle me-3" width="60" height="60" loading="lazy">
+                                <div>
+                                    <h5 class="mb-0">Adebayo Johnson</h5>
+                                    <small class="text-muted">Lagos Business Owner</small>
+                                </div>
+                            </div>
+                            <div class="rating mb-3 text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"DK Realty helped me find the perfect commercial space for my business in Ikoyi. Their attention to detail and negotiation skills saved me millions. Highly recommended!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card card h-100">
+                        <div class="card-body p-4 testimonial-content">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="image/user2.webp" alt="Client testimonial" class="rounded-circle me-3" width="60" height="60" loading="lazy">
+                                <div>
+                                    <h5 class="mb-0">Chioma Okonkwo</h5>
+                                    <small class="text-muted">Abuja Resident</small>
+                                </div>
+                            </div>
+                            <div class="rating mb-3 text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="card-text">"The team at DK Realty made my relocation to Abuja seamless. They understood exactly what I was looking for and found me a beautiful home in Maitama within my budget."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card card h-100">
+                        <div class="card-body p-4 testimonial-content">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="image/user3.webp" alt="Client testimonial" class="rounded-circle me-3" width="60" height="60" loading="lazy">
+                                <div>
+                                    <h5 class="mb-0">Emeka Nwankwo</h5>
+                                    <small class="text-muted">Port Harcourt Investor</small>
+                                </div>
+                            </div>
+                            <div class="rating mb-3 text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="card-text">"As a real estate investor, I rely on DK Realty's market expertise. They've helped me acquire several high-yield properties in Port Harcourt that have appreciated significantly."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary-green text-white">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="mb-4">Stay Updated With Our Latest Properties</h2>
+                    <p class="lead mb-5">Subscribe to our newsletter and get exclusive access to new listings, market insights, and special offers.</p>
+                    
+                    <form class="newsletter-form mx-auto">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-lg" placeholder="Your email address" aria-label="Your email address" required>
+                            <button class="btn btn-gold btn-lg" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    
+                    <small class="d-block mt-3 text-white-50">We respect your privacy. Unsubscribe at any time.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Latest From Our Blog</h2>
+                <p class="lead">Insights and advice on Nigerian real estate market</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="image/blog1.webp" class="card-img-top" alt="Real estate investment tips" loading="lazy">
+                        <div class="card-body">
+                            <small class="text-muted">June 15, 2023 • Market Trends</small>
+                            <h5 class="card-title mt-2">5 Emerging Real Estate Markets in Nigeria for 2023</h5>
+                            <p class="card-text">Discover the up-and-coming neighborhoods that offer great investment potential with lower entry points.</p>
+                            <a href="blog-single.html" class="btn btn-link text-gold text-decoration-none p-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="image/blog2.webp" class="card-img-top" alt="Home buying guide" loading="lazy">
+                        <div class="card-body">
+                            <small class="text-muted">May 28, 2023 • Buying Guide</small>
+                            <h5 class="card-title mt-2">The Complete Checklist for Buying Property in Nigeria</h5>
+                            <p class="card-text">Avoid common pitfalls with our step-by-step guide to purchasing property in Nigeria safely and smartly.</p>
+                            <a href="blog-single.html" class="btn btn-link text-gold text-decoration-none p-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="image/blog3.webp" class="card-img-top" alt="Property valuation" loading="lazy">
+                        <div class="card-body">
+                            <small class="text-muted">April 10, 2023 • Home Value</small>
+                            <h5 class="card-title mt-2">How to Accurately Value Your Property in a Changing Market</h5>
+                            <p class="card-text">Learn the key factors that determine property values and how to assess your home's worth in today's market.</p>
+                            <a href="blog-single.html" class="btn btn-link text-gold text-decoration-none p-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="blog.html" class="btn btn-gold btn-lg px-5">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 bg-primary-green rounded-3 p-5 text-white text-center" data-aos="zoom-in">
+                    <h2 class="mb-4">Ready to Find Your Dream Property?</h2>
+                    <p class="lead mb-5">Our team of experts is ready to help you navigate the Nigerian real estate market with confidence.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="contact.html" class="btn btn-gold btn-lg px-4">Contact Us</a>
+                        <a href="tel:+2348123456789" class="btn btn-outline-light btn-lg px-4">
+                            <i class="fas fa-phone-alt me-2"></i> +234 812 345 6789
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer pt-5">
+        <div class="container pt-5">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="DK Realty Home">
+                            <!-- <img src="images/logo-white.png" alt="DK Realty Logo" height="50" loading="lazy"> -->
+                            <div class="logo-text ms-2">
+                                <h1 class="text-white">DK Realty</h1>
+                                <span class="text-gold">Nigeria's Trusted Real Estate Partner</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="mb-4">Providing exceptional real estate services across Nigeria since 2010. We connect buyers, sellers, and investors with trusted property solutions.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="properties.html">Properties</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <h3>Services</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="services.html#sales">Property Sales</a></li>
+                        <li class="mb-2"><a href="services.html#rental">Property Rental</a></li>
+                        <li class="mb-2"><a href="services.html#investment">Investment Advisory</a></li>
+                        <li class="mb-2"><a href="services.html#valuation">Property Valuation</a></li>
+                        <li class="mb-2"><a href="services.html#management">Property Management</a></li>
+                        <li class="mb-2"><a href="services.html#legal">Legal Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <h3>Contact Us</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex">
+                            <i class="fas fa-map-marker-alt contact-icon mt-1"></i>
+                            <div>
+                                <strong>Head Office:</strong><br>
+                                12A Admiralty Way,<br>
+                                Lekki Phase 1, Lagos
+                            </div>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <i class="fas fa-phone-alt contact-icon mt-1"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                +234 812 345 6789
+                            </div>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <i class="fas fa-envelope contact-icon mt-1"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                info@dkrealty.com
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 bg-secondary">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 DK Realty. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item"><a href="terms.html">Terms of Service</a></li>
+                        <li class="list-inline-item mx-2">•</li>
+                        <li class="list-inline-item"><a href="sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            loadingOverlay.style.opacity = '0';
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 500);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form validation
+        const propertySearchForm = document.getElementById('propertySearchForm');
+        if (propertySearchForm) {
+            propertySearchForm.addEventListener('submit', function(e) {
+                // Add any form validation logic here
+                // Example: if (someCondition) { e.preventDefault(); }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
